@@ -19,42 +19,12 @@
           "settings": {
           }
         },
-        "mxpr-favorites": {
-          "type": "shopify:\/\/apps\/prime-review\/blocks\/mxpr-favorites\/f16f27f6-be6f-4f94-921b-9a297092286b",
-          "settings": {
-            "heading": "",
-            "add_message": "",
-            "exist_message": "",
-            "view_favorites": "",
-            "button_class": "button\nbutton--full-width\nbutton--secondary",
-            "additional_style": "",
-            "product": "{{product}}"
-          }
-        },
-        "mxpr-average-rating": {
-          "type": "shopify:\/\/apps\/prime-review\/blocks\/mxpr-average-rating\/f16f27f6-be6f-4f94-921b-9a297092286b",
-          "settings": {
-            "stars_fill_color": "#ffd900",
-            "star_size": 24,
-            "padding_x": 0,
-            "padding_y": 0,
-            "show_count": true,
-            "count_caption_prefix": "(",
-            "count_caption_suffix": ")",
-            "product": "{{product}}"
-          }
-        },
-        "judgeme_preview_badge_product_page_a97faca1": {
-          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-          }
-        },
         "3803dde1-231e-4744-b0ee-ac3fa1f88086": {
           "type": "shopify:\/\/apps\/product-reviews\/blocks\/star_rating\/bae150af-8da8-48b2-9867-398188115e5f",
           "settings": {
             "stars_fill_color": "#000000",
             "star_size": 16,
-            "text_align": "center",
+            "text_align": "flex-start",
             "product": "{{product}}",
             "stars_text_empty": "No reviews"
           }
@@ -87,11 +57,6 @@
           "settings": {
             "nameinput_label": "文字入れ",
             "nameinput_hosoku": "パッケージにテキストを最大15文字を入れることができます。"
-          }
-        },
-        "e70e0e3d-bb91-4af4-879f-e5994b79a1b9": {
-          "type": "shopify:\/\/apps\/all-in-gift-e\/blocks\/app-block-product\/14c78036-27a0-4098-a9e3-c3f1525dedff",
-          "settings": {
           }
         },
         "buy_buttons": {
@@ -136,16 +101,12 @@
         "e8456865-72ed-4971-9eb1-b2ab957ce626",
         "title",
         "description",
-        "mxpr-favorites",
-        "mxpr-average-rating",
-        "judgeme_preview_badge_product_page_a97faca1",
         "3803dde1-231e-4744-b0ee-ac3fa1f88086",
         "2f8fe7c6-6918-4179-9a87-f45d31068570",
         "price",
         "variant_picker",
         "quantity_selector",
         "66f7ca5c-8cf8-4fa0-917b-f8344244666a",
-        "e70e0e3d-bb91-4af4-879f-e5994b79a1b9",
         "buy_buttons",
         "collapsible-row-1",
         "collapsible-row-2",
@@ -166,46 +127,14 @@
     "judgeme_section_review_widget_e85c": {
       "type": "apps",
       "blocks": {
-        "judgeme_review_widget_e66db19b": {
-          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-          }
-        },
         "7069d498-3cf6-411d-a880-06289bb89e45": {
           "type": "shopify:\/\/apps\/product-reviews\/blocks\/reviews\/bae150af-8da8-48b2-9867-398188115e5f",
           "settings": {
           }
-        },
-        "e022f780-27f8-4837-b34e-caedf07ceb39": {
-          "type": "shopify:\/\/apps\/prime-review\/blocks\/mxpr-product-reviews\/f16f27f6-be6f-4f94-921b-9a297092286b",
-          "settings": {
-            "list_count": 5,
-            "load_more_text": "",
-            "stars_fill_color": "#ffd900",
-            "star_size": 24,
-            "border_color": "#dddddd",
-            "border_size": 0,
-            "border_radius": 5,
-            "margin_y": 0,
-            "margin_x": 0,
-            "margin_auto": true,
-            "padding_y": 20,
-            "padding_x": 20,
-            "heading": "",
-            "title_size": 24,
-            "no_reviews_action_text": "",
-            "existing_reviews_action_text": "",
-            "best_review_label": "",
-            "show_detail": true,
-            "additional_style": "",
-            "product": "{{product}}"
-          }
         }
       },
       "block_order": [
-        "judgeme_review_widget_e66db19b",
-        "7069d498-3cf6-411d-a880-06289bb89e45",
-        "e022f780-27f8-4837-b34e-caedf07ceb39"
+        "7069d498-3cf6-411d-a880-06289bb89e45"
       ],
       "settings": {
         "include_margins": true
