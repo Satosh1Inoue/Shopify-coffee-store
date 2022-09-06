@@ -115,7 +115,7 @@
       ],
       "settings": {
         "enable_sticky_info": true,
-        "gallery_layout": "stacked",
+        "gallery_layout": "thumbnail",
         "media_size": "small",
         "mobile_thumbnails": "hide",
         "hide_variants": false,
@@ -136,24 +136,6 @@
       "block_order": [
         "7069d498-3cf6-411d-a880-06289bb89e45"
       ],
-      "settings": {
-        "include_margins": true
-      }
-    },
-    "mxpr-qanda": {
-      "type": "apps",
-      "settings": {
-        "include_margins": true
-      }
-    },
-    "mxpr-product-reviews": {
-      "type": "apps",
-      "settings": {
-        "include_margins": true
-      }
-    },
-    "1658724565579b23c0": {
-      "type": "apps",
       "settings": {
         "include_margins": true
       }
@@ -185,9 +167,6 @@
   "order": [
     "main",
     "judgeme_section_review_widget_e85c",
-    "mxpr-qanda",
-    "mxpr-product-reviews",
-    "1658724565579b23c0",
     "product-recommendations",
     "16595162987393fb84"
   ]

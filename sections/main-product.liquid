@@ -23,7 +23,7 @@
     }
     
   {%- endstyle -%}
- 
+
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 
   {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
@@ -61,14 +61,14 @@
               {%- assign featured_media = product.selected_or_first_available_variant.featured_media -%}
               <li id="Slide-{{ section.id }}-{{ featured_media.id }}" class="product__media-item grid__item slider__slide is-active{% if featured_media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains featured_media.src %} product__media-item--variant{% endif %}" data-media-id="{{ section.id }}-{{ featured_media.id }}">
                 {%- assign media_position = 1 -%}
-                {% render 'product-thumbnail', media: featured_media, position: media_position, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true, media_width: media_width, lazy_load: false %}
+                {% render 'product-thumbnail',  media: featured_media, position: media_position, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true, media_width: media_width, lazy_load: false %}
               </li>
             {%- endif -%}
             {%- for media in product.media -%}
               {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
                 <li id="Slide-{{ section.id }}-{{ media.id }}" class="product__media-item grid__item slider__slide{% if product.selected_or_first_available_variant.featured_media == null and forloop.index == 1 %} is-active{% endif %}{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
                   {%- assign media_position = media_position | default: 0 | plus: 1 -%}
-                  {% render 'product-thumbnail', media: media, position: media_position, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true, media_width: media_width, lazy_load: true %}
+                  {% render 'product-thumbnail', media: media, position: media_position, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true, media_width: media_width, lazy_load: true, %}
                 </li>
               {%- endunless -%}
             {%- endfor -%}
@@ -193,27 +193,15 @@
           </slider-component>
         {%- endif -%}
       </media-gallery>
-      <script  src="  {{ 'zoomsl.min.js' | asset_url }}" defer="defer">
-        $(function(){
-          $(".product__modal-opener--image img").imagezoomsl({
-          //以下オプション
-            classmagnifier: window.external ? "round-loope" : "", //CSSで拡大枠の形状を変更
-            cursorshadeborder: "10px solid #000", //カーソル枠の太さ・形状・色
-            descarea: ".my-container", //クラス指定した場所に拡大画像を表示
-            innerzoom: true, //インナーズーム
-            innerzoommagnifier: true, //インナーズームの別バージョン
-            loopspeedanimate: 5, //カーソルの追従速度
-            magnifierborder: "none",  //カーソル枠の有無
-            magnifiereffectanimate: "fadeIn", //拡大画像のアニメーション。他にslideIn
-            magnifierpos: "left", //拡大画像の位置。他にright
-            magnifiersize: [530, 340], //拡大画像のサイズ。絶対値
-            scrollspeedanimate: 10, //カーソル移動時の拡大画像の追従速度
-            zoomrange: [1, 10], //ズームのレンジ 1-10倍
-            zoomstart: 4, //ズームの開始値
-          });
-        });
-      </script>    
     </div>
+
+    <!-- zoom -->
+    <script>
+      $(function() {
+        $(".zoomsl").imagezoomsl();
+      });
+    </script>
+
     <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}">
       <div id="ProductInfo-{{ section.id }}" class="product__info-container{% if section.settings.enable_sticky_info %} product__info-container--sticky{% endif %}">
         {%- assign product_form_id = 'product-form-' | append: section.id -%}
