@@ -197,9 +197,24 @@
 
     <!-- zoom -->
     <script>
-      $(function() {
-        $(".zoomsl").imagezoomsl();
-      });
+$(function(){
+  $(".zoomsl-img").imagezoomsl({
+  //以下オプション
+    classmagnifier: window.external ? "round-loope" : "", //CSSで拡大枠の形状を変更
+    cursorshadeborder: "10px solid #000", //カーソル枠の太さ・形状・色
+    descarea: ".my-container", //クラス指定した場所に拡大画像を表示
+    innerzoom: true, //インナーズーム
+    innerzoommagnifier: true, //インナーズームの別バージョン
+    loopspeedanimate: 5, //カーソルの追従速度
+    magnifierborder: "none",  //カーソル枠の有無
+    magnifiereffectanimate: "fadeIn", //拡大画像のアニメーション。他にslideIn
+    magnifierpos: "left", //拡大画像の位置。他にright
+    magnifiersize: [530, 340], //拡大画像のサイズ。絶対値
+    scrollspeedanimate: 10, //カーソル移動時の拡大画像の追従速度
+    zoomrange: [1, 10], //ズームのレンジ 1-10倍
+    zoomstart: 4, //ズームの開始値
+  });
+});
     </script>
 
     <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}">
