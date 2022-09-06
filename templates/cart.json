@@ -1,0 +1,95 @@
+{
+  "sections": {
+    "cart-items": {
+      "type": "main-cart-items",
+      "settings": {
+        "show_vendor": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1658718468bdd95468": {
+      "type": "apps",
+      "blocks": {
+        "bcbc0a9e-94a1-4322-b8d8-a79391efe6da": {
+          "type": "shopify:\/\/apps\/\/blocks\/dokopoi-cart\/76829e09-68d0-4a74-bcca-a1319e063714",
+          "settings": {
+            "midasitext": "ポイントを利用する",
+            "pointclass": "dokopoi-page-width",
+            "textlayout": "right",
+            "pointbutton": "ポイントを使用する",
+            "pointresetbutton": "リセット",
+            "buttonClass": "cart__submit btn btn--small-wide",
+            "inputfield": 100,
+            "logintext": "ログインするとポイントが貯められます！",
+            "pointloginbutton": "ログインはこちらから",
+            "customcss": ".dokopoi-page-width{\nmax-width: 120rem;\nmargin: 0 auto;\n}\n#pointLabel{\ncolor:#000000;\n}\n#point-submit{\nbackground-color:#000000;\ncolor:#ffffff;\nmax-width:300px;\nmargin-bottom:30px;\n}\n#point{\nborder:solid 1px #000000;\nmargin-bottom:30px;\n}\n#point-reset{\nbackground-color:#000000;\ncolor:#ffffff;\nmax-width:300px;\nmargin-bottom:30px;\n}"
+          }
+        }
+      },
+      "block_order": [
+        "bcbc0a9e-94a1-4322-b8d8-a79391efe6da"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "cart-footer": {
+      "type": "main-cart-footer",
+      "blocks": {
+        "subtotal": {
+          "type": "subtotal",
+          "settings": {
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "subtotal",
+        "buttons"
+      ],
+      "settings": {
+        "show_cart_note": true,
+        "show_date_picker": true,
+        "show_wrapping_option": true
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "あなたへのおすすめ",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "cart-items",
+    "1658718468bdd95468",
+    "cart-footer",
+    "featured-collection"
+  ]
+}

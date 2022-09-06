@@ -1,0 +1,110 @@
+{% comment %}
+/**配送日時の指定**/
+{% endcomment %}
+
+<div>
+  <span>配送希望日：</span>
+  <input type="hidden" name="attributes[配送日指定の有無]" form="cart" value="No">
+  <input type="radio" name="attributes[配送日指定の有無]" form="cart" value="指定しない" id="datePicker__label--false" {% unless
+    cart.attributes["配送指定の有無"]=="指定する" %} checked{% endunless %}>
+  <label for="datePicker__label--false">指定しない</label>
+  <input type="radio" name="attributes[配送日指定の有無]" form="cart" value="指定する" id="datePicker__label--true" {% if
+    cart.attributes["配送指定の有無"]=="指定する" %} checked{% endif %}>
+  <label for="datePicker__label--true">指定する</label>
+  <div id="datepicker" readonly disabled>
+    <input id="datepicker-input" type="text" name="attributes[配送希望日]" form="cart" value="{{ cart.attributes.date }}" placeholder="配送希望日" readonly disabled />
+  </div>
+</div>
+<div id="delivery-time-block">
+  <span>配送希望時間帯：</span>
+  <input type="hidden" name="attributes[配送希望時間帯]" form="cart" value="No">
+  <select id="delivery-time" form="cart" name="attributes[配送希望時間帯]">
+    <option value="指定なし" {% if cart.attributes["配送希望時間帯"]=="指定なし" %} selected{% endif %}>指定なし</option>
+    <option value="午前中" {% if cart.attributes["配送希望時間帯"]=="午前中" %} selected{% endif %}>午前中</option>
+    <option value="14時から16時" {% if cart.attributes["配送希望時間帯"]=="14時から16時" %} selected{% endif %}>14時から16時</option>
+    <option value="16時から18時" {% if cart.attributes["配送希望時間帯"]=="16時から18時" %} selected{% endif %}>16時から18時</option>
+    <option value="18時から20時" {% if cart.attributes["配送希望時間帯"]=="18時から20時" %} selected{% endif %}>18時から20時</option>
+    <option value="19時から21時" {% if cart.attributes["配送希望時間帯"]=="19時から21時" %} selected{% endif %}>19時から21時</option>
+  </select>
+</div>
+
+<style>
+  .ui-datepicker td span, .ui-datepicker td a{
+    text-align: center;
+  }
+  .ui-datepicker-inline{
+    margin: auto;
+    width: 100%;
+  }
+
+  #delivery-time-block {
+    display: none;
+  }
+
+  #datepicker-input{
+    text-align: center;
+  }
+  .wrapping_calendar{
+  padding: 0 4% 4%;
+  width: auto;
+  border: solid 1px;
+}
+
+  #shipping_option{
+    align-items: flex-end;
+  }
+
+  #datepicker{
+    display: none;
+  }
+</style>
+
+<script>
+  //土日祝日指定
+  $.get("https://holidays-jp.github.io/api/v1/date.json", function (holidaysData) {
+    $("#datepicker").datepicker({
+      minDate: '+3D', //最短日の指定*3日後から指定可能
+      maxDate: '+2M', //最長日の指定*2ヶ月後まで指定可能
+      beforeShowDay: function (date) {
+        if (date.getDay() == 0) {
+          return [true, 'day-sunday', null];//trueで土曜日を選択可に変更
+        } else if (date.getDay() == 6) {
+          return [true, 'day-saturday', null];//trueで日曜日を選択可に変更
+        }
+
+        var holidays = Object.keys(holidaysData);
+        for (var i = 0; i < holidays.length; i++) {
+          var holiday = new Date(Date.parse(holidays[i]));
+          if (holiday.getYear() == date.getYear() &&
+            holiday.getMonth() == date.getMonth() &&
+            holiday.getDate() == date.getDate()) {
+            return [true, 'day-holiday', null];//trueで祝日を選択可に変更
+          }
+        }
+        return [true, 'day-weekday', null];
+      },
+      onSelect: function (dateText, inst) {
+        var hogehoge = $("input[name='attributes[配送日指定の有無]']:checked").val();
+        if (hogehoge == "指定する") {
+          $("#datepicker-input").val(dateText);
+        }
+      }
+    });
+  });
+
+  //配送指定がない場合に配送希望日を選択できないようにする
+  $(function () {
+    $('input[name="attributes[配送日指定の有無]"]:radio').change(function () {
+      var radioval = $(this).val();
+      if (radioval == "指定する") {
+        $('#datepicker-input').removeAttr('disabled');
+        $("#delivery-time-block").show("normal");
+        $("#datepicker").show("normal");
+      } else {
+        $('#datepicker-input').attr('disabled', 'disabled').val("");
+        $("#delivery-time-block").hide("normal");
+        $("#datepicker").hide("normal");
+      }
+    });
+  });
+</script>

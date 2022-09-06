@@ -1,0 +1,51 @@
+    <div class="scroll">
+        <span class="scroll-text">Scroll</span>
+    </div>
+
+<style>
+    .scroll {
+        padding-top: 70px;
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
+        color: #fff;
+        z-index: 99;
+    }
+
+    .scroll::before {
+        animation: scroll 3.5s infinite;
+        border: solid rgb(255, 255, 255);
+        background-color: #fff;
+        border-width: 0 0 2px 2px;
+        content: "";
+        display: inline-block;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 38%;
+        transform: rotate(-45deg);
+        width: 10px;
+        height: 10px;
+
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: rotate(-45deg) translate(0, 0);
+        }
+
+        80% {
+            transform: rotate(-45deg) translate(-45px, 45px);
+        }
+
+        0%,
+        80%,
+        100% {
+            opacity: 0;
+        }
+
+        40% {
+            opacity: 1;
+        }
+    }
+</style>
