@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "name": "slick_slide",
     "sections": {
       "main": {
@@ -9,3 +10,16 @@
       "main"
     ]
   }
+=======
+  "sections": {
+    "main": {
+      "type": "custom-product",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
+>>>>>>> 68965742ef8609c37af81410b84978d4928710e4
