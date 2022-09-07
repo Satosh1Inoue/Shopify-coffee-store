@@ -1,0 +1,11 @@
+{
+    "name": "slick_slide",
+    "sections": {
+      "main": {
+        "type": "custom-product.liquid"
+      }
+    },
+    "order": [
+      "main"
+    ]
+  }
