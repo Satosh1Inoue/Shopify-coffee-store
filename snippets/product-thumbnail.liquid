@@ -15,11 +15,11 @@
     {% render 'product-thumbnail',
       media: media,
       position: forloop.index,
-      loop: section.settings.enable_video_looping,
+      loop: section.settings.enable_video_loopinsg,
       modal_id: section.id
     %}
 {% endcomment %}
-<noscript>
+<!-- <noscript> -->
   {%- if media.media_type == 'video' or media.media_type == 'external_video' -%}
     <span class="product__media-icon motion-reduce quick-add-hidden">{% render 'icon-play' %}</span>
     <div class="product__media media gradient global-media-settings" style="padding-top: {{ 1 | divided_by: media.preview_image.aspect_ratio | times: 100 }}%;">
@@ -43,6 +43,7 @@
         height="{{ 973 | divided_by: media.preview_image.aspect_ratio | ceil }}"
         alt="{{ media.preview_image.alt | escape }}"
       >
+
     </div>
     <a href="{% if media.media_type == 'video' %}{{ media.sources[1].url }}{% else %}{{ media | external_video_url }}{% endif %}" class="product__media-toggle">
       <span class="visually-hidden">{{ 'products.product.video_exit_message' | t: title: product.title | escape }}</span>
@@ -61,7 +62,7 @@
           {% if media.preview_image.width >= 1426 %}{{ media.preview_image | image_url: width: 1426 }} 1426w,{% endif %}
           {% if media.preview_image.width >= 1646 %}{{ media.preview_image | image_url: width: 1646 }} 1646w,{% endif %}
           {% if media.preview_image.width >= 1946 %}{{ media.preview_image | image_url: width: 1946 }} 1946w,{% endif %}
-          {{ media.preview_image | image_url }} {{ media.preview_image.width }}w"
+          {{ media.preview_image | image_url }} {{ media.preview_image.width }}"
         src="{{ media | image_url: width: 1946 }}"
         sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | times: media_width | round }}px, (min-width: 990px) calc({{ media_width | times: 100 }}vw - 10rem), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)"
         {% unless lazy_load == false %}loading="lazy"{% endunless %}
@@ -71,10 +72,10 @@
       >
     </div>
   {%- endif -%}
-</noscript>
+<!-- </noscript> -->
 
-<!-- <modal-opener class="product__modal-opener product__modal-opener--{{ media.media_type }} no-js-hidden" data-modal="#ProductModal-{{ modal_id }}"> -->
-  <!-- <span class="product__media-icon motion-reduce quick-add-hidden" aria-hidden="true">
+<modal-opener class="product__modal-opener product__modal-opener--{{ media.media_type }} no-js-hidden" data-modal="#ProductModal-{{ modal_id }}">
+  <span class="product__media-icon motion-reduce quick-add-hidden" aria-hidden="true">
     {%- liquid
       case media.media_type
       when 'video' or 'external_video'
@@ -85,10 +86,10 @@
         render 'icon-zoom'
       endcase
     -%}
-  </span> -->
+  </span>
 
   <div class="product__media media media--transparent gradient global-media-settings" style="padding-top: {{ 1 | divided_by: media.preview_image.aspect_ratio | times: 100 }}%;">
-    <img  class="zoomsl"
+    <img class="zoomsl"
       srcset="{% if media.preview_image.width >= 493 %}{{ media.preview_image | image_url: width: 493 }} 493w,{% endif %}
         {% if media.preview_image.width >= 600 %}{{ media.preview_image | image_url: width: 600 }} 600w,{% endif %}
         {% if media.preview_image.width >= 713 %}{{ media.preview_image | image_url: width: 713 }} 713w,{% endif %}
@@ -114,7 +115,7 @@
       {{ 'products.product.media.open_media' | t: index: position }}
     </span>
   </button>
-<!-- </modal-opener> -->
+</modal-opener>
 
 {%- if media.media_type != 'image' -%}
   {%- if media.media_type == 'model' -%}
@@ -132,7 +133,7 @@
         {%- render 'icon-play' -%}
       {%- endif -%}
     </span>
-    <img class="zoomsl"
+    <img
       srcset="{% if media.preview_image.width >= 493 %}{{ media.preview_image | image_url: width: 493 }} 493w,{% endif %}
         {% if media.preview_image.width >= 600 %}{{ media.preview_image | image_url: width: 600 }} 600w,{% endif %}
         {% if media.preview_image.width >= 713 %}{{ media.preview_image | image_url: width: 713 }} 713w,{% endif %}
