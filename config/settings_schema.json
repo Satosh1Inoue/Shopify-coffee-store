@@ -1119,6 +1119,12 @@
         "id": "social_vimeo_link",
         "label": "t:settings_schema.social-media.settings.social_vimeo_link.label",
         "info": "t:settings_schema.social-media.settings.social_vimeo_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_line_link",
+        "label": "LINE",
+        "info": "https:\/\/line.me\/shopify"
       }
     ]
   },

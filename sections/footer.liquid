@@ -218,6 +218,14 @@
                 </a>
               </li>
             {%- endif -%}
+              {%- if settings.social_line_link != blank -%}
+              <li class="list-social__item">
+                <a href="{{ settings.social_line_link }}" class="link list-social__link">
+                  {%- render 'icon-line' -%}
+                  <span class="visually-hidden">{{ 'general.social.links.line' | t }}</span>
+                </a>
+              </li>
+              {%- endif -%}
           </ul>
         {%- endif -%}
       </div>
