@@ -129,7 +129,15 @@
       <a href="{{ routes.account_register_url }}">
         {{ 'customer.login_page.create_account' | t }}
       </a>
-      
+  <!-- Amazon Login button -->
+  <div>
+    <a href='#' class='login-with-amazon'>
+      <img src='https://images-na.ssl-images-amazon.com/images/G/01/lwa/btnLWA_gold_312x64.png' alt='Login with Amazon'
+        border='0' width='156' height='32'>
+    </a>
+    </div>
+    <!-- handle clicks -->
+    <script src="//hosted.loginwithamazon.com/shopify.js"></script>
     {%- endform -%}
   </div>
   
@@ -145,4 +153,5 @@
       {%- endform -%}
     </div>
   {%- endif -%}
-</div>
+  </div>
+  
