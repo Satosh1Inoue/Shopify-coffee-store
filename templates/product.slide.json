@@ -1,16 +1,4 @@
 {
-<<<<<<< HEAD
-    "name": "slick_slide",
-    "sections": {
-      "main": {
-        "type": "custom-product.liquid"
-      }
-    },
-    "order": [
-      "main"
-    ]
-  }
-=======
   "sections": {
     "main": {
       "type": "custom-product",
@@ -22,4 +10,3 @@
     "main"
   ]
 }
->>>>>>> 68965742ef8609c37af81410b84978d4928710e4
