@@ -196,7 +196,10 @@
     </div>
     {% javascript %}
     $(function () {
-        $(".zoomsl").imagezoomsl();
+        $(".zoomsl").imagezoomsl({
+          zoomrange: [1, 10],
+          zoomstart: 4
+        });
       });
     {% endjavascript %}
 
