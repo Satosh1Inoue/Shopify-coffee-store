@@ -50,10 +50,10 @@
         <li class="grid__item field customer-birthday_li"><select id="year" name="customer[note][Year]"><option value="0" class="customer-birthday_text">Year</option></select></li>
         <li class="grid__item field customer-birthday_li"><select id="month" name="customer[note][Month]"><option value="0" class="customer-birthday_text">Month</option></select></li>
         <li class="grid__item field customer-birthday_li"><select id="day" name="customer[note][Day]"><option value="0" class="customer-birthday_text">Day</option></select></li>
-      </ul> 
-    </div>  
+      </ul>
+    </div>
 
-    <div class="field">      
+    <div class="field">
       <input
         type="text"
         name="customer[first_name]"
@@ -132,7 +132,7 @@
         {{ form.errors.translated_fields['password'] | capitalize }} {{ form.errors.messages['password'] }}.
       </span>
     {%- endif -%}
-         <div class="field">     
+         <div class="field">
       <input
         type="password"
         id="RegisterForm-password-confirm"
@@ -157,5 +157,8 @@
     <button onclick="return Validate()">
       {{ 'customer.register.submit' | t }}
     </button>
+    <div>
+      <button onclick="return Validate()">aaa</button>
+    </div>
   {%- endform -%}
 </div>
