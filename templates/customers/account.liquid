@@ -26,7 +26,6 @@
                 <th id="ColumnPayment" scope="col" role="columnheader">{{ 'customer.orders.payment_status' | t }}</th>
                 <th id="ColumnFulfillment" scope="col" role="columnheader">{{ 'customer.orders.fulfillment_status' | t }}</th>
                 <th id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.orders.total' | t }}</th>
-                <th>test</th>
               </tr>
             </thead>
             <tbody role="rowgroup">
@@ -54,10 +53,6 @@
                   <td headers="RowOrder ColumnTotal" role="cell" data-label="{{ 'customer.orders.total' | t }}">
                     {{ order.total_price | money_with_currency }}
                   </td>
-                   <td>
-                    {{ order.email }}
-                    {{ order.line_items }}
-                   </td>
                 </tr>
               {%- endfor -%}
             </tbody>
